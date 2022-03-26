@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap");
+html, body {
+  font-family: "Ubuntu Mono", monospace;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 0;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-size: large;
+}
+
+.section {
+  height: 100vh;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section.title {
+  height: 100vh;
+}
+
+.section-content-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.section-content {
+  padding: 20px;
+  margin: 20px;
+  flex: 1 1 auto;
+  outline: 2px ridge #ffffff;
+  border-radius: 2rem;
+  background-color: #232323cc;
+  z-index: 100;
+}
+
+.section-header {
+  margin-bottom: 30px;
+  text-align: center;
+  z-index: 100;
+  padding: 20px;
+  background-color: #232323d9;
+  border-radius: 1rem;
+  border: #ffffff solid 2px;
+}
+
+#indicator {
+  position: absolute;
+  top: 90%;
+  color: #aaaaaa;
+  width: 100%;
+  text-align: center;
+}
+
+svg#background {
+  margin: 0;
+  padding: 0;
+  background-color: #232323;
+  position: fixed;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 768px) {
+  .section {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: auto;
+  }
+
+  .section-content-box {
+    flex-direction: column;
+  }
+
+  .section-header {
+    font-size: small;
+  }
+
+  #indicator {
+    visibility: hidden;
+  }
+
+  #last-section {
+    height: unset;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
