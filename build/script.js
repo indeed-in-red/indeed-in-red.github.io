@@ -33,12 +33,12 @@ class BackgroundTriangle {
         if (delta > 0) {
             // regenerates on the bottom as they are scrolling down
             x1 = Math.random() * 100 - 6;
-            y1 = -10;
+            y1 = Math.random() * (-10) - 10;
         }
         else {
             // regenerates it in the top
             x1 = Math.random() * 100 - 6;
-            y1 = 110;
+            y1 = Math.random() * 10 + 110;
         }
         alpha = Math.random() * Math.PI;
         dist = this.dist;
