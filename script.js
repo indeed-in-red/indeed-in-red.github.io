@@ -89,6 +89,15 @@ var background = document.getElementById("background");
 var triangles = [];
 
 for (var i = 5; i > 0; i--) {
+    var filter = document.createElement("filter");
+    filter.id = 'blur-' + i;
+    var gaussianBlur = document.createElement("feGaussianBlur");
+    gaussianBlur.setAttribute('in', "SourceGraphic");
+    gaussianBlur.setAttribute('stdDeviation', (i == 1 ? 0.2 : ((i / 3) ** 2)));
+    filter.appendChild(gaussianBlur);
+
+    background.appendChild(filter);
+
     for (var j = 0; j < 9; j++) {
         var tmp = document.createElement("polygon");
         var x1, y1, x2, y2, x3, y3, alpha, alpha2, dist;
@@ -109,8 +118,8 @@ for (var i = 5; i > 0; i--) {
 
         tmp.classList.add('background-triangle', 'triangle-z-' + i);
         tmp.setAttribute("points", a + ' ' + b + ' ' + c);
-        tmp.style.fill = 'rgb(60, 0, 0)';
-        tmp.style.filter = 'blur(' + (i == 1 ? 0.2 : ((i / 3) ** 2)) + 'px) saturate(' + (6 - i) + ')';
+        tmp.setAttribute('filter', `url(#blur-${i}) saturate(` + (6 - i) + `)`);
+        tmp.setAttribute('fill', 'rgb(60, 0, 0)');
 
         var coordonates = {
             a: { x: x1, y: y1 },
