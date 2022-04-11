@@ -88,7 +88,7 @@ class TriangleCoordonates {
 var background = document.getElementById("background");
 var triangles = [];
 
-for (var i = 5; i > 0; i--) {
+for (var i = 4; i > 0; i--) {
     var filter = document.createElement("filter");
     filter.id = 'blur-' + i;
     var gaussianBlur = document.createElement("feGaussianBlur");
